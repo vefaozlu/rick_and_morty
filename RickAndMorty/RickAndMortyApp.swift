@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RickAndMortyApp: App {
+    @StateObject var locationsProvider = LocationsProvider()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreen()
+                .environmentObject(locationsProvider)
         }
     }
 }
